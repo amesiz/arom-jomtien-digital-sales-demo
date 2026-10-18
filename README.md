@@ -2,9 +2,7 @@
 
 เดโม่เชิงโต้ตอบสำหรับระบบการตลาดออนไลน์, CRM, ผังห้อง และการจองของโครงการ AROM Jomtien
 
-## Private hosted demo
-
-https://arom-jomtien-sales-demo.grittycove.chatgpt.site
+[เปิดระบบเดโม่ผ่าน GitHub Pages](https://amesiz.github.io/arom-jomtien-digital-sales-demo/)
 
 Sites deployment นี้เป็น private demo สำหรับเจ้าของบัญชี ไม่ใช่เว็บไซต์ทางการของโครงการ
 
