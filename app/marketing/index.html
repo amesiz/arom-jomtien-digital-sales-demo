@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>AROM Jomtien — Marketing Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#top" aria-label="AROM Jomtien home"><span class="brand-mark">A</span><span><b>AROM</b><small>JOMTIEN · PATTAYA</small></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-item" href="../index.html"><span class="nav-icon">⌂</span> Command center</a>
+        <a class="nav-item" href="#overview"><span class="nav-icon">◫</span> Overview</a>
+        <a class="nav-item active" href="#analytics"><span class="nav-icon">⌁</span> Marketing analytics</a>
+        <a class="nav-item" href="#campaigns"><span class="nav-icon">◉</span> Campaigns</a>
+        <a class="nav-item" href="#funnel"><span class="nav-icon">▽</span> Lead funnel</a>
+        <a class="nav-item" href="#channels"><span class="nav-icon">◈</span> Channels</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="project-mini"><div class="mini-photo"></div><div><b>AROM Jomtien</b><small>Beachfront residences</small></div><span class="online-dot"></span></div>
+        <button class="profile"><span class="avatar">AM</span><span><b>Arisa M.</b><small>Marketing team</small></span><span class="more">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main" id="top">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumbs">Projects <span>/</span> <b>AROM Jomtien</b></div>
+        <div class="top-actions"><span class="live-status"><i></i> Demo workspace</span><button class="icon-button" aria-label="Notifications">♧<em></em></button><span class="avatar top-avatar">AM</span></div>
+      </header>
+
+      <section class="content" id="analytics">
+        <div class="page-heading">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> PERFORMANCE OVERVIEW <span class="demo-pill">DEMO DATA</span></div><h1>Marketing analytics</h1><p class="subtitle">A clear view of every touchpoint, from first impression to booking.</p></div>
+          <button class="export-button" id="exportBtn"><span>↓</span> Export report</button>
+        </div>
+
+        <section class="filter-row" aria-label="Dashboard filters">
+          <label class="filter-control"><span class="filter-label">PERIOD</span><span class="select-wrap">▦ <select id="dateFilter" aria-label="Date range"><option value="30">Last 30 days</option><option value="7">Last 7 days</option><option value="90">Last 90 days</option></select><span class="chevron">⌄</span></span></label>
+          <label class="filter-control"><span class="filter-label">CHANNEL</span><span class="select-wrap">⌁ <select id="channelFilter" aria-label="Channel"><option value="all">All channels</option><option value="Meta">Meta</option><option value="Google">Google</option><option value="TikTok">TikTok</option><option value="Property Portal">Property Portal</option></select><span class="chevron">⌄</span></span></label>
+          <div class="filter-note"><span class="sync-icon">↻</span> Updated just now <span class="note-sep">·</span> <span id="dateLabel">01 Sep – 30 Sep 2026</span></div>
+        </section>
+
+        <section class="kpi-grid" id="overview" aria-label="Key performance metrics">
+          <article class="kpi-card"><div class="kpi-top"><span>Ad spend</span><span class="kpi-icon spend-icon">฿</span></div><div class="kpi-value" id="spend">฿842,600</div><div class="kpi-foot"><span class="trend up">↗ 12.8%</span><span>vs. previous period</span></div><div class="sparkline teal"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 21 C12 18 13 20 22 14 S38 17 45 12 55 15 64 9 77 14 84 6 93 9 100 2"/></svg></div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Impressions</span><span class="kpi-icon impression-icon">◉</span></div><div class="kpi-value" id="impressions">2.84M</div><div class="kpi-foot"><span class="trend up">↗ 8.4%</span><span>vs. previous period</span></div><div class="sparkline blue"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 21 C10 19 15 12 23 16 S36 10 43 12 53 8 62 12 74 5 82 9 92 2 100 4"/></svg></div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Clicks</span><span class="kpi-icon click-icon">↗</span></div><div class="kpi-value" id="clicks">38,420</div><div class="kpi-foot"><span class="trend up">↗ 6.2%</span><span>vs. previous period</span></div><div class="sparkline gold"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 22 C10 18 14 13 22 17 S34 12 41 14 53 7 62 12 75 6 81 10 93 2 100 3"/></svg></div></article>
+          <article class="kpi-card"><div class="kpi-top"><span>Leads</span><span class="kpi-icon lead-icon">♧</span></div><div class="kpi-value" id="leads">486</div><div class="kpi-foot"><span class="trend up">↗ 18.6%</span><span>vs. previous period</span></div><div class="sparkline rose"><svg viewBox="0 0 100 25" preserveAspectRatio="none"><path d="M0 22 C11 20 13 15 23 18 S37 13 44 15 55 10 63 13 74 5 83 9 94 1 100 3"/></svg></div></article>
+        </section>
+
+        <section class="middle-grid">
+          <article class="panel performance-panel">
+            <div class="panel-heading"><div><h2>Performance over time</h2><p>Track spend and lead generation across channels</p></div><div class="legend"><span><i class="legend-dot spend-dot"></i> Ad spend</span><span><i class="legend-dot lead-dot"></i> Leads</span><button class="dots-button" aria-label="Chart options">···</button></div></div>
+            <div class="chart-summary"><strong id="chartSpend">฿842,600</strong><span class="summary-label">total spend</span><span class="summary-divider"></span><strong id="chartLeads">486</strong><span class="summary-label">leads generated</span></div>
+            <div class="chart-wrap"><div class="y-labels"><span>฿200k</span><span>฿150k</span><span>฿100k</span><span>฿50k</span><span>฿0</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg id="performanceChart" viewBox="0 0 700 190" preserveAspectRatio="none" aria-label="Spend and leads trend chart" role="img"><defs><linearGradient id="spendFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2d7776" stop-opacity=".16"/><stop offset="1" stop-color="#2d7776" stop-opacity="0"/></linearGradient></defs><path class="area-path" d="M0 142 C48 135 63 118 108 125 S170 96 214 108 265 73 315 89 367 68 412 79 466 48 511 63 563 36 610 49 655 24 700 31 V190 H0 Z"/><path class="spend-line" d="M0 142 C48 135 63 118 108 125 S170 96 214 108 265 73 315 89 367 68 412 79 466 48 511 63 563 36 610 49 655 24 700 31"/><path class="lead-line" d="M0 165 C45 157 69 162 108 151 S175 158 214 140 267 148 315 126 368 137 412 119 462 132 511 106 564 118 610 95 657 103 700 82"/></svg><div class="x-labels"><span>01 Sep</span><span>05 Sep</span><span>10 Sep</span><span>15 Sep</span><span>20 Sep</span><span>25 Sep</span><span>30 Sep</span></div></div></div>
+          </article>
+
+          <article class="panel funnel-panel" id="funnel">
+            <div class="panel-heading"><div><h2>Conversion funnel</h2><p>From first touch to confirmed booking</p></div><button class="dots-button" aria-label="Funnel options">···</button></div>
+            <div class="funnel-total"><strong id="funnelImpressions">2.84M</strong><span>total impressions</span><span class="funnel-range">30 days</span></div>
+            <div class="funnel-list">
+              <div class="funnel-row"><div class="funnel-label"><span>Impressions</span><b id="funnelImpPct">100%</b></div><div class="funnel-track"><i class="funnel-bar f1" style="width:100%"></i></div><small id="funnelImpNum">2,840,000 people reached</small></div>
+              <div class="funnel-row"><div class="funnel-label"><span>Clicks</span><b id="funnelClickPct">1.4%</b></div><div class="funnel-track"><i class="funnel-bar f2" style="width:77%"></i></div><small id="funnelClickNum">38,420 website visits</small></div>
+              <div class="funnel-row"><div class="funnel-label"><span>Leads</span><b id="funnelLeadPct">1.3%</b></div><div class="funnel-track"><i class="funnel-bar f3" style="width:54%"></i></div><small id="funnelLeadNum">486 enquiries received</small></div>
+              <div class="funnel-row"><div class="funnel-label"><span>Site visits</span><b id="funnelVisitPct">29.6%</b></div><div class="funnel-track"><i class="funnel-bar f4" style="width:34%"></i></div><small id="funnelVisitNum">144 qualified visits</small></div>
+              <div class="funnel-row"><div class="funnel-label"><span>Bookings</span><b id="funnelBookingPct">18.1%</b></div><div class="funnel-track"><i class="funnel-bar f5" style="width:21%"></i></div><small id="funnelBookingNum">26 reservations made</small></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="lower-grid">
+          <article class="panel channel-panel" id="channels">
+            <div class="panel-heading"><div><h2>Channel breakdown</h2><p>Where your marketing budget is working</p></div><a class="text-link" href="#campaigns">View campaigns <span>→</span></a></div>
+            <div class="channel-head"><span>CHANNEL</span><span>SPEND</span><span>LEADS</span><span>CPL</span><span>ROAS</span></div>
+            <div class="channel-list" id="channelList"></div>
+          </article>
+          <article class="panel quality-panel">
+            <div class="panel-heading"><div><h2>Lead quality</h2><p>Progress beyond the enquiry</p></div><span class="quality-icon">✳</span></div>
+            <div class="quality-metrics"><div><span>Qualified leads</span><strong id="qualifiedLeads">312</strong><small><i>64.2%</i> of total leads</small></div><div><span>Site visits</span><strong id="visits">144</strong><small><i>46.2%</i> of qualified</small></div></div>
+            <div class="quality-divider"></div>
+            <div class="quality-bottom"><div><span>Bookings</span><strong id="bookings">26</strong></div><div><span>Booking value</span><strong id="revenue">฿78.4M</strong></div><div><span>ROAS</span><strong class="roas-value" id="roas">93.1×</strong></div></div>
+            <div class="cost-strip"><span>CPL <b id="costPerLead">฿1,734</b></span><span>Cost / Visit <b id="costPerVisit">฿5,851</b></span><span>Cost / Booking <b id="costPerBooking">฿32,408</b></span></div>
+            <div class="quality-note"><span>↗</span> Strong conversion momentum this period</div>
+          </article>
+        </section>
+
+        <section class="panel campaigns-panel" id="campaigns">
+          <div class="panel-heading campaign-heading"><div><h2>Top campaigns</h2><p>Campaign performance for the selected period <span class="inline-demo">· DEMO</span></p></div><button class="table-filter" id="tableSort">Sort by leads <span>⌄</span></button></div>
+          <div class="table-scroll"><table><thead><tr><th>CAMPAIGN</th><th>CHANNEL</th><th>SPEND</th><th>CLICKS</th><th>LEADS</th><th>CPL</th><th>STATUS</th></tr></thead><tbody id="campaignRows"></tbody></table></div>
+          <div class="table-footer"><span id="tableCount">Showing 5 of 12 campaigns</span><div class="pagination"><button aria-label="Previous page" disabled>‹</button><button class="page-current">1</button><button>2</button><button>3</button><button aria-label="Next page">›</button></div></div>
+        </section>
+        <footer class="footer"><span>© 2026 AROM Jomtien Marketing Intelligence</span><span>All figures shown are illustrative <b>DEMO DATA</b></span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

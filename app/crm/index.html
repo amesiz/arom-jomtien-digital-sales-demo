@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AROM Jomtien · Sales CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span><b>AROM</b><small>JOMTIEN · SALES SUITE</small></span></a>
+    <div class="project-switch"><span class="project-dot"></span><span><small>PROJECT</small><b>AROM Jomtien</b></span><span class="chevron">⌄</span></div>
+    <nav><div class="nav-label">WORKSPACE</div>
+      <a class="nav-item" href="../index.html"><span>⌂</span> Command center</a>
+      <a class="nav-item active" href="#dashboard"><span>◫</span> Overview</a>
+      <a class="nav-item" href="#leads"><span>♧</span> Leads <i>24</i></a>
+      <a class="nav-item" href="#inventory"><span>▦</span> Unit inventory</a>
+      <a class="nav-item" href="#bookings"><span>▤</span> Bookings <i>3</i></a>
+      <div class="nav-label nav-label-spaced">MANAGE</div><a class="nav-item" href="#team"><span>♙</span> Sales team</a><a class="nav-item" href="#reports"><span>◷</span> Reports</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✳</div><b>Need a hand?</b><p>Visit the sales operations guide.</p><a href="#">Open guide <span>↗</span></a></div><div class="user-card"><div class="avatar avatar-rose">PK</div><span><b>Parichat K.</b><small>Sales manager</small></span><span class="chevron">···</span></div></div>
+  </aside>
+  <main class="main" id="dashboard">
+    <header class="topbar"><div class="breadcrumb">AROM Jomtien <span>/</span> <b>Overview</b></div><div class="top-actions"><span class="today">◷ &nbsp; Monday, 19 October 2026</span><button class="icon-button" aria-label="Notifications">♧<em></em></button><div class="avatar avatar-rose">PK</div></div></header>
+    <div class="content">
+      <div class="welcome-row"><div><div class="eyebrow">SALES OVERVIEW <span class="live-dot"></span> LIVE</div><h1>Good morning, Parichat <span>✳</span></h1><p>Here’s what’s happening at AROM Jomtien today.</p></div><button class="button primary" id="newLeadBtn"><span>＋</span> Add new lead</button></div>
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-head">TOTAL LEADS <span class="stat-icon violet">♧</span></div><div class="stat-value" id="totalLeads">248</div><div class="stat-foot"><span class="up">↗ 12.8%</span> vs. last month</div><div class="sparkline spark-violet">▁▂▁▃▂▄▃▅▄▆▅▇</div></article>
+        <article class="stat-card"><div class="stat-head">ACTIVE PIPELINE <span class="stat-icon blue">◉</span></div><div class="stat-value">฿ 186.4<span class="unit">M</span></div><div class="stat-foot"><span class="up">↗ 8.2%</span> vs. last month</div><div class="sparkline spark-blue">▁▂▃▂▄▃▅▄▆▅▆▇</div></article>
+        <article class="stat-card"><div class="stat-head">UNITS BOOKED <span class="stat-icon green">▣</span></div><div class="stat-value">32<span class="unit"> / 314</span></div><div class="stat-foot"><span class="up">10.2%</span> of total inventory</div><div class="mini-progress"><i style="width:10.2%"></i></div></article>
+        <article class="stat-card"><div class="stat-head">CONVERSION RATE <span class="stat-icon amber">↗</span></div><div class="stat-value">12.9<span class="unit">%</span></div><div class="stat-foot"><span class="up">↗ 2.4%</span> vs. last month</div><div class="sparkline spark-amber">▂▁▃▂▄▃▅▄▃▆▅▇</div></article>
+      </section>
+      <section class="overview-grid">
+        <article class="panel pipeline-panel"><div class="panel-heading"><div><h2>Sales pipeline</h2><p>Lead distribution by stage</p></div><button class="select-button">This month⌄</button></div><div class="pipeline-total"><b>248</b><span>total leads</span><span class="up">↗ 12.8%</span></div><div class="pipeline-bar"><i class="bar-inquiry"></i><i class="bar-qualified"></i><i class="bar-visit"></i><i class="bar-negotiation"></i><i class="bar-booked"></i></div><div class="stage-legend"><span><i class="dot d1"></i>New inquiry <b>82</b></span><span><i class="dot d2"></i>Qualified <b>64</b></span><span><i class="dot d3"></i>Visit scheduled <b>42</b></span><span><i class="dot d4"></i>Negotiation <b>28</b></span><span><i class="dot d5"></i>Booked <b>32</b></span></div></article>
+        <article class="panel source-panel"><div class="panel-heading"><div><h2>Lead sources</h2><p>Where your leads come from</p></div><button class="dots">···</button></div><div class="source-layout"><div class="donut"><div><b>248</b><small>LEADS</small></div></div><div class="source-legend"><span><i class="dot online"></i>Online <b>112</b><small>45%</small></span><span><i class="dot booth"></i>Sales booth <b>62</b><small>25%</small></span><span><i class="dot broker"></i>Broker <b>49</b><small>20%</small></span><span><i class="dot referral"></i>Referral <b>25</b><small>10%</small></span></div></div></article>
+      </section>
+      <section class="panel leads-panel" id="leads"><div class="panel-heading leads-heading"><div><h2>Recent leads <span class="count-pill" id="leadCount">6</span></h2><p>Keep your conversations moving forward.</p></div><a class="text-link" href="#">View all leads <span>→</span></a></div>
+        <div class="table-tools"><div class="search-wrap"><span>⌕</span><input id="searchInput" placeholder="Search leads..."></div><select id="stageFilter"><option value="">All stages</option><option>New inquiry</option><option>Qualified</option><option>Visit scheduled</option><option>Negotiation</option><option>Booked</option></select><button class="filter-btn">☷ <span>Filter</span></button></div>
+        <div class="table-scroll"><table><thead><tr><th>LEAD</th><th>SOURCE</th><th>INTERESTED IN</th><th>STAGE</th><th>FOLLOW-UP</th><th>ASSIGNED TO</th><th></th></tr></thead><tbody id="leadRows"></tbody></table></div><div class="table-footer"><span>Showing <b id="showingCount">6</b> of 248 leads</span><div class="pager"><button>‹</button><button class="current-page">1</button><button>2</button><button>3</button><span>…</span><button>42</button><button>›</button></div></div>
+      </section>
+      <section class="panel inventory-panel" id="inventory"><div class="panel-heading inventory-heading"><div><div class="eyebrow">314 RESIDENCES · 45 FLOORS · SAMPLE STACK PLAN</div><h2>Unit availability</h2><p>Choose a floor to explore demo residences. Unit IDs, prices and status counts are illustrative.</p></div><div class="inventory-actions"><div class="legend-inline"><span><i class="dot available-dot"></i>Available <b>226</b></span><span><i class="dot hold-dot"></i>On hold <b>18</b></span><span><i class="dot booked-dot"></i>Booked <b>32</b></span><span><i class="dot sold-dot"></i>Sold <b>38</b></span></div><button class="button outline" id="allUnitsBtn">View all units ↗</button></div></div>
+        <div class="inventory-body"><div class="stack-wrap"><div class="stack-meta"><span>FLOOR</span><span class="stack-name">Stack plan</span><span>← SEA VIEW</span></div><div class="floor-list" id="floorList"></div></div><div class="floor-details"><div class="floor-title"><div><div class="eyebrow">SELECTED FLOOR</div><h3 id="floorTitle">Floor 18 <span>·</span> Mid zone</h3></div><span class="floor-availability"><i class="dot available-dot"></i><b id="floorAvailable">4</b> available</span></div><div class="unit-grid" id="unitGrid"></div><div class="unit-hint"><span>Tap a unit to see details</span><span>DEMO PRICES · NOT OFFICIAL</span></div></div></div>
+      </section>
+      <div class="bottom-grid"><section class="panel follow-panel"><div class="panel-heading"><div><h2>Today’s follow-ups <span class="count-pill">4</span></h2><p>Stay on top of your next conversations.</p></div><a class="text-link" href="#">See schedule →</a></div><div class="follow-list"><div class="follow-row"><div class="follow-time">10:30<small>AM</small></div><div class="avatar avatar-sky">NW</div><div class="follow-person"><b>Nattaya Wongchai</b><small>Call · Qualified lead</small></div><span class="follow-tag">Unit 18A</span><button>···</button></div><div class="follow-row"><div class="follow-time">11:00<small>AM</small></div><div class="avatar avatar-peach">JC</div><div class="follow-person"><b>James Carter</b><small>Site visit · New inquiry</small></div><span class="follow-tag">Unit 32B</span><button>···</button></div><div class="follow-row"><div class="follow-time">1:30<small>PM</small></div><div class="avatar avatar-lilac">SP</div><div class="follow-person"><b>Suphansa P.</b><small>Follow-up · Negotiation</small></div><span class="follow-tag">Unit 12C</span><button>···</button></div></div></section>
+        <section class="panel bookings-panel" id="bookings"><div class="panel-heading"><div><h2>Recent bookings <span class="count-pill">3</span></h2><p>Latest unit reservations.</p></div><a class="text-link" href="#">View all →</a></div><div class="booking-list"><div class="booking-row"><div class="booking-unit"><b>12A</b><small>2 BED · 86 SQ.M.</small></div><div class="booking-buyer"><b>Michael Tan</b><small>19 Oct 2026 · 09:42</small></div><div class="loan-state"><i class="dot loan-pending"></i>Loan pending</div><span class="status-chip status-hold">Reserved</span></div><div class="booking-row"><div class="booking-unit"><b>28C</b><small>1 BED · 42 SQ.M.</small></div><div class="booking-buyer"><b>Pimchanok R.</b><small>18 Oct 2026 · 16:10</small></div><div class="loan-state"><i class="dot loan-ok"></i>Pre-approved</div><span class="status-chip status-booked">Booked</span></div></div></section></div>
+      <footer>AROM Jomtien Sales Suite <span>·</span> Internal use only <span>·</span> Demo data</footer>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status"></div><div class="modal-backdrop" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+  <script src="app.js"></script>
+</body></html>

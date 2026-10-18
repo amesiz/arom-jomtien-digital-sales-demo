@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>AROM Demo Clip Maker</title><style>body{margin:0;background:#0d2725;color:#fff;font-family:Segoe UI,Arial,sans-serif;display:grid;place-items:center;min-height:100vh}main{text-align:center}canvas{width:min(92vw,1280px);height:auto;box-shadow:0 25px 80px #0008;background:#102b29}h1{font-size:20px;letter-spacing:.08em}p{color:#a9c3b7}.download{display:none;margin:22px auto 0;width:max-content;background:#f6f2e8;color:#123b39;padding:14px 24px;border-radius:4px;text-decoration:none;font-weight:700}.error{color:#ffc1a9}</style></head>
+<body><main><h1>AROM JOMTIEN · DEMO CLIP</h1><p id="status">Rendering the interactive demo clip…</p><canvas id="canvas" width="1280" height="720"></canvas><a id="download" class="download" download="AROM-Jomtien-System-Demo.webm">Download demo clip</a></main>
+<script>
+const scenes=[
+  {src:'assets/demo-command-center.png',title:'One view · from media to money',sub:'Digital Sales Command Center'},
+  {src:'assets/demo-marketing.png',title:'Know where every baht is working',sub:'Spend · CPL · Cost per Booking · ROAS'},
+  {src:'assets/demo-crm.png',title:'Every lead has an owner and next action',sub:'Online · Booth · Broker · Referral'},
+  {src:'assets/demo-website.png',title:'A website designed to create qualified demand',sub:'Public experience connected to CRM'}
+];
+const canvas=document.querySelector('#canvas'),ctx=canvas.getContext('2d'),status=document.querySelector('#status'),download=document.querySelector('#download');
+const load=(src)=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=src});
+const ease=(t)=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+function roundedRect(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);}
+function drawFrame(image,scene,t,sceneIndex){
+  const z=1+.026*ease(t),w=1280*z,h=720*z,x=(1280-w)*(sceneIndex%2?.72:.28),y=(720-h)*.45;
+  ctx.clearRect(0,0,1280,720);ctx.drawImage(image,x,y,w,h);
+  const fadeIn=Math.min(1,t/.18),fadeOut=Math.min(1,(1-t)/.16),alpha=Math.min(fadeIn,fadeOut);
+  const grad=ctx.createLinearGradient(0,420,0,720);grad.addColorStop(0,'rgba(4,21,20,0)');grad.addColorStop(1,'rgba(4,21,20,.92)');ctx.fillStyle=grad;ctx.fillRect(0,360,1280,360);
+  ctx.globalAlpha=alpha;roundedRect(72,524,650,132,7);ctx.fillStyle='rgba(11,42,39,.82)';ctx.fill();
+  ctx.fillStyle='#d7b98f';ctx.font='700 13px Segoe UI';ctx.letterSpacing='2px';ctx.fillText(`0${sceneIndex+1} / 04`,100,557);
+  ctx.fillStyle='#fff';ctx.font='600 34px Segoe UI';ctx.fillText(scene.title,100,603);
+  ctx.fillStyle='#c9dbd2';ctx.font='400 18px Segoe UI';ctx.fillText(scene.sub,100,635);
+  ctx.globalAlpha=1;ctx.fillStyle='rgba(255,255,255,.25)';ctx.fillRect(72,687,1136,3);ctx.fillStyle='#d7b98f';ctx.fillRect(72,687,1136*((sceneIndex+t)/scenes.length),3);
+  ctx.fillStyle='rgba(5,29,27,.78)';roundedRect(1035,42,173,34,17);ctx.fill();ctx.fillStyle='#fff';ctx.font='700 11px Segoe UI';ctx.fillText('CONCEPT DEMO',1066,64);
+}
+async function render(){
+  try{
+    const images=await Promise.all(scenes.map(s=>load(s.src)));
+    const mime=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(x=>MediaRecorder.isTypeSupported(x));
+    if(!mime)throw new Error('This browser cannot create a WebM recording.');
+    const stream=canvas.captureStream(30),chunks=[],rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:5000000});
+    rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+    const stopped=new Promise(resolve=>rec.onstop=resolve);rec.start(250);
+    const sceneMs=4200,total=scenes.length*sceneMs,start=performance.now();
+    await new Promise(resolve=>{function frame(now){const elapsed=Math.min(now-start,total-1),idx=Math.min(scenes.length-1,Math.floor(elapsed/sceneMs)),t=(elapsed%sceneMs)/sceneMs;drawFrame(images[idx],scenes[idx],t,idx);if(now-start<total)requestAnimationFrame(frame);else resolve()}requestAnimationFrame(frame)});
+    rec.stop();await stopped;const blob=new Blob(chunks,{type:mime});download.href=URL.createObjectURL(blob);download.style.display='block';status.textContent=`Ready · ${(blob.size/1048576).toFixed(1)} MB · 17 seconds`;
+  }catch(error){status.className='error';status.textContent=error.message;}
+}
+render();
+</script></body></html>

@@ -1,0 +1,6 @@
+.build/
+.codex-finalizer/
+.chart-data-*/
+agent_outputs/
+node_modules/
+*.log
