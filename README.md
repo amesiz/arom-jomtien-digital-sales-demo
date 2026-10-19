@@ -4,6 +4,8 @@
 
 [เปิดระบบเดโม่ผ่าน GitHub Pages](https://amesiz.github.io/arom-jomtien-digital-sales-demo/)
 
+[เปิดคู่มือการใช้งาน](https://amesiz.github.io/arom-jomtien-digital-sales-demo/guide/)
+
 Sites deployment นี้เป็น private demo สำหรับเจ้าของบัญชี ไม่ใช่เว็บไซต์ทางการของโครงการ
 
 ## เปิดใช้งานบน Windows
@@ -36,6 +38,7 @@ app/
   index.html           Command Center
   marketing/           Performance dashboard
   crm/                 CRM + inventory + booking
+  guide/               คู่มือการใช้งานทุกเมนู
   website/             Public website concept
   assets/              Concept visuals
 deliverables/           Presentation, PDF and demo clip
